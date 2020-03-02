@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lht.logon.mapper.UserMapper">
+	<select id="queryUser" resultType="com.lht.logon.entity.LogonUser">
+		select user_name userName,user_password password,user_email userEmail,user_age userAge from tab_user
+		where user_name=#{userName} and user_password = #{passowrd}
+	</select>
+
+	<insert id="regiest" >
+		insert into tab_user(user_name ,user_password ,user_email,user_age ) values(#{userName} ,#{password},#{userEmail},#{userAge})
+	</insert>
+</mapper>
